@@ -1,11 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthenticationModule } from './authentication/authentication.module';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthModule } from './auth/auth.module';
+import { NavbarModule } from './share/layout/navbar/navbar.module';
+import { UserManagementModule } from './main/user-management/user-management.module';
+import { HomeComponent } from './home/home.component';
+import { LinkComponent } from './link/link.component';
 
 @NgModule({
   declarations: [
@@ -14,10 +18,10 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthenticationModule,
-    HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    HttpClientModule,
+    AuthModule,
+    UserManagementModule
   ],
   providers: [],
   bootstrap: [AppComponent]
