@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from './auth/auth.module';
-import { NavbarModule } from './share/layout/navbar/navbar.module';
 import { UserManagementModule } from './main/user-management/user-management.module';
-import { HomeComponent } from './home/home.component';
-import { LinkComponent } from './link/link.component';
+import { HomeModule } from './main/home/home.module';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,11 @@ import { LinkComponent } from './link/link.component';
     FormsModule,
     HttpClientModule,
     AuthModule,
-    UserManagementModule
+    UserManagementModule,
+    HomeModule,
+    StoreModule.forRoot({}),
+    StoreDevtoolsModule.instrument(),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
